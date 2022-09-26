@@ -10,4 +10,4 @@ class ErrorHandlerItem:
     
     def handle(self, request: requests.models.Response):
         if (request.status_code == self.status_code):
-            raise GitHubResponseException(404, self.message)
+            raise GitHubResponseException(self.status_code, self.message)
